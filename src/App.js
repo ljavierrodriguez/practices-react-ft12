@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { FaQuestion } from 'react-icons/fa';
+import { FaQuestion, FaReact } from 'react-icons/fa';
 import './App.css';
 import Accordion from './components/Accordion';
 import FAQForm from './components/FAQForm';
@@ -51,7 +51,7 @@ function App() {
     <div className="container">
       <div className="row">
         <div className="col-md-12">
-          <h1>Preguntas Frecuentes<FaQuestion /></h1>
+          <h1><FaReact /> Preguntas Frecuentes<FaQuestion /></h1>
         </div>
       </div>
       <div className="row">
