@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import AccordionItem from './AccordionItem';
 
-const Accordion = ({ faq, search }) => {
+const Accordion = ({ faq, search, setFAQ }) => {
     return (
         <div className="accordion" id="accordionExample">
             {
@@ -11,7 +11,7 @@ const Accordion = ({ faq, search }) => {
                     return item.question.includes(search) || item.answer.includes(search)
                 }).map((fq, index) => {
                     return (
-                        <AccordionItem fq={fq} key={index} index={index} />
+                        <AccordionItem fq={fq} key={index} index={index} setFAQ={setFAQ} />
                     )
                 })
             }
