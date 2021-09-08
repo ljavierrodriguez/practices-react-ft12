@@ -147,6 +147,26 @@ function App() {
       .catch((error) => console.log(error))
   }
 
+  const deleteFAQ = ({ id }) => {
+    fetch(`${url}/${id}`, {
+      method: 'DELETE',
+      headers: {
+        'Content-Type': 'application/json',
+      }
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data);
+        //let newFaq = [...faq]; // [...faq].concat(data)
+        //newFaq.push(data);
+        //setFaq(newFaq)
+        //if (data.id) {
+        getFAQ();
+        //}
+      })
+      .catch((error) => console.log(error))
+  }
+
   return (
     <>
       <div className="container">
@@ -162,7 +182,7 @@ function App() {
         </div>
         <div className="row">
           <div className="col-md-12 py-5">
-            <Accordion faq={faq} search={search} setFAQ={setFAQ} />
+            <Accordion faq={faq} search={search} setFAQ={setFAQ} deleteFAQ={deleteFAQ} />
           </div>
         </div>
         {
